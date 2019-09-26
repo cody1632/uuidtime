@@ -4,7 +4,7 @@
 #include <sys/time.h>
 #include <getopt.h>
 
-const char *uuidtime_version = "0.1.1";
+const char *uuidtime_version = "0.1.2";
 
 static const struct option long_options[] = {
 	{"help", no_argument, NULL, 'h'},
@@ -36,9 +36,9 @@ int main (int argc, char **argv) {
 	struct tm *tm0 = gmtime(&t0);
 	char buffer[32];
 	// 00000000-yyyy-mmmm-dddd-hhhhhhnnnnnn
-	sprintf(buffer,"%06x%04x%02x%02x%04x%06x%06x", 0,
+	sprintf(buffer,"%04x%04x%02x%02x%04x%06x%06x%02x", 0,
 		(int)tm0->tm_year, (int)tm0->tm_mon, (int)tm0->tm_mday, 0,
-		(int)tv0.tv_sec, (int)tv0.tv_usec);
+		(int)tv0.tv_sec, (int)tv0.tv_usec, rand()%255);
 	
 	char *c = buffer;
 	unsigned int cnt = 0;
