@@ -9,8 +9,8 @@ int main (int argc, char **argv) {
 	time_t t0 = (time_t)tv0.tv_sec;
 	struct tm *tm0 = gmtime(&t0);
 	// 00000000-yyyy-mmmm-dddd-hhhhhhnnnnnn
-	printf("%08d-%04d-%04d-%04d-%06x%06x\n", 0,
-		tm0->tm_year,tm0->tm_mon, tm0->tm_mday,
+	printf("%08x-%04x-%04x-%04x-%06x%06x\n", 0,
+		(int)tm0->tm_year, (int)tm0->tm_mon, (int)tm0->tm_mday,
 		(int)tv0.tv_sec, (int)tv0.tv_usec);
 
 	return 0;
