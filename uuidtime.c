@@ -36,6 +36,7 @@ int main (int argc, char **argv) {
 	struct tm *tm0 = gmtime(&t0);
 	char buffer[32];
 	// 00000000-yyyy-mmmm-dddd-hhhhhhnnnnnn
+	srand((unsigned int)tv0.tv_usec/100);
 	sprintf(buffer,"%04x%04x%02x%02x%04x%06x%06x%02x", 0,
 		(int)tm0->tm_year, (int)tm0->tm_mon, (int)tm0->tm_mday, 0,
 		(int)tv0.tv_sec, (int)tv0.tv_usec, rand()%255);
