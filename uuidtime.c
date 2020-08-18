@@ -4,7 +4,7 @@
 #include <sys/time.h>
 #include <getopt.h>
 
-const char *uuidtime_version = "0.1.2";
+const char *uuidtime_version = "0.1.3";
 
 static const struct option long_options[] = {
 	{"help", no_argument, NULL, 'h'},
