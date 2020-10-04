@@ -13,7 +13,6 @@ static const struct option long_options[] = {
 };
 static const char *short_options = "hV";
 
-//d94deb38-e066-11e9-9324-001b77c4af72
 int main (int argc, char **argv) {
 	int opt;
 	while (1) {
@@ -34,7 +33,8 @@ int main (int argc, char **argv) {
 	gettimeofday(&tv0, NULL);
 	time_t t0 = (time_t)tv0.tv_sec;
 	struct tm *tm0 = gmtime(&t0);
-	char buffer[32];
+	char buffer[33];
+	// d94deb38-e066-11e9-9324-001b77c4af72
 	// 00000000-yyyy-mmmm-dddd-hhhhhhnnnnnn
 	srand((unsigned int)tv0.tv_usec/100);
 	sprintf(buffer,"%04x%02x%02x%04x%06x%06x%02x%02x%02x",
